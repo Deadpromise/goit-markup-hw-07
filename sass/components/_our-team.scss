@@ -15,11 +15,10 @@
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
+    &:first-child {
+        margin-left: 0;
+    }
     /* outline: 1px dashed yellowgreen; */
-}
-
-.team-item:first-child {
-    margin-left: 0;
 }
 
 .team-descr {
@@ -53,7 +52,6 @@
 
 .social-item:not(:first-child) {
     margin-left: 10px;
-
 }
 
 .social-link {
@@ -67,10 +65,10 @@
 
     transition: background-color $cubic-function,
         fill $cubic-function;
-}
 
-.social-link:hover,
-.social-link:focus {
-    background-color: $accent-color;
-    fill: $secondary-color;
+    &:hover,
+    &:focus {
+        background-color: $accent-color;
+        fill: $secondary-color;
+    }
 }

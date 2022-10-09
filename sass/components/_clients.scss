@@ -3,11 +3,11 @@
     justify-content: center;
 }
 
-.client-item:not(:first-child) {
+.client-list__item:not(:first-child) {
     margin-left: 30px;
 }
-
-.client-link {
+// client-link
+.client-list__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +19,9 @@
 
     transition: fill $cubic-function,
         border-color $cubic-function;
-}
-
-.client-link:hover,
-.client-link:focus {
-    fill: $accent-color;
-    border-color: $accent-color;
+    &:hover,
+    &:focus {
+        fill: $accent-color;
+        border-color: $accent-color;
+        }
 }

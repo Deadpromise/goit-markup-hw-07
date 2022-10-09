@@ -12,7 +12,22 @@
     margin-bottom: 30px;
 }
 
-.quality-header {
+
+.qualities-list {
+    display: flex;
+
+}
+
+.qualities-list__item {
+    flex-basis: calc((100% - 90px) / 4);
+    margin-left: 30px;
+/* outline: 1px solid teal; */
+    &:first-child {
+        margin-left: 0;
+        }   
+}
+
+.qualities-list__header {
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 1.14;
@@ -21,19 +36,4 @@
 
     color: $header-color;
 
-}
-
-.qualities-list {
-    display: flex;
-
-}
-
-.qualities-item {
-    flex-basis: calc((100% - 90px) / 4);
-    margin-left: 30px;
-    /* outline: 1px solid teal; */
-}
-
-.qualities-item:first-child {
-    margin-left: 0;
 }

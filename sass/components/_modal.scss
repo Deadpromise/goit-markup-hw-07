@@ -8,6 +8,7 @@
     opacity: 1;
     transition: opacity $cubic-function,
         visibility $cubic-function;
+
 }
 
 .backdrop.is-hidden {
@@ -15,11 +16,6 @@
     pointer-events: none;
     visibility: hidden;
 }
-
-.backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0.5);
-}
-
 
 .modal {
     position: absolute;
@@ -34,6 +30,10 @@
     transform: translate(-50%, -50%) scale(1);
     transition: transform $cubic-function,
         box-shadow $cubic-function;
+
+    .backdrop.is-hidden & {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
 }
 
 .close-button {
@@ -49,11 +49,11 @@
     border-radius: 50%;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
-}
 
-.close-button:hover,
-.close-button:focus {
-    fill: $accent-color;
+    &:hover,
+    &:focus {
+        fill: $accent-color;
+        }
 }
 
 .form-header {
@@ -77,12 +77,11 @@
     display: flex;
     flex-direction: column-reverse;
     margin-bottom: 10px;
-}
 
-.input-field:last-of-type {
-    margin-bottom: 20px;
+    &:last-of-type {
+        margin-bottom: 20px;
+    }
 }
-
 
 .input-field span {
     margin-bottom: 4px;
@@ -106,6 +105,10 @@
     top: 50%;
     left: 12px;
     transition: fill $cubic-function;
+
+    // .input-field:focus-within > & {
+    //         fill: $accent-color;
+    //     }
 }
 
 .input-field:focus-within > .form-icon {
@@ -125,10 +128,9 @@
     line-height: 1.17;
     letter-spacing: 0.01em;
 
-}
-
-.input-field textarea::placeholder {
-    color: rgba(117, 117, 117, 0.5);
+    &::placeholder {
+        color: rgba(117, 117, 117, 0.5);
+    }
 }
 
 .input-field:focus-within input,
@@ -164,7 +166,7 @@
 
 }
 
-.checkbox:checked+.icon-check {
+.checkbox:checked + .icon-check {
     border: none;
     fill: $accent-color;
 
@@ -176,17 +178,18 @@
     margin-left: 5px;
     color: $accent-color;
     text-decoration: none;
-}
-.agreement-link::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    display: block;
-    background: $accent-color;
-    width: 100%;
-    height: 1px;
-    border-radius: 2px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        display: block;
+        background: $accent-color;
+        width: 100%;
+        height: 1px;
+        border-radius: 2px;
     }
+}
 
 .send-button {
     margin-left: auto;
